@@ -1,21 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+   package com.campuslaundry.model;
 
-package com.campuslaundry.model;
-
-/**
- *
- * @author jaz
- */
-public enum BookingStatus {
-    PENDING,
-    ACCEPTED,
-    REJECTED,
-    IN_PROGRESS,
-    READY,
-    COMPLETED,
-    CANCELLED
-}
+   /** The stages a booking goes through. */
+   public enum BookingStatus {
+       PENDING,
+       CONFIRMED,
+       IN_PROGRESS,
+       COMPLETED,
+       CANCELLED
+   }
