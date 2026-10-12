@@ -1,17 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.campuslaundry.model;
 
-/**
- *
- * @author jaz
- */
 public enum ServiceType {
-    WASHING,
-    IRONING,
-    DRY_CLEANING
+    WASH(100.0, 35),
+    DRY(80.0, 45),
+    WASH_AND_DRY(170.0, 80);
+
+    private final double price;
+    private final int durationMinutes;
+
+    ServiceType(double price, int durationMinutes) {
+        this.price = price;
+        this.durationMinutes = durationMinutes;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getDurationMinutes() {
+        return durationMinutes;
+    }
 }

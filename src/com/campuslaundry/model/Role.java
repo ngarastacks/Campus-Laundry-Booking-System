@@ -1,17 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.campuslaundry.model;
 
-/**
- *
- * @author jaz
- */
 public enum Role {
-    STUDENT,
-    ATTENDANT,
-    ADMIN
+    STUDENT(0.0),
+    STAFF(0.10),
+    ADMIN(0.0);
+
+    private final double discountRate;
+
+    Role(double discountRate) {
+        this.discountRate = discountRate;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
 }
