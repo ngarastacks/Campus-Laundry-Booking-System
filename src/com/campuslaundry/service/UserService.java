@@ -6,7 +6,7 @@ import com.campuslaundry.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 
-public class UserService {
+public class UserService implements UserLookup {
 
     private final UserRepository repository;
 
@@ -23,8 +23,6 @@ public class UserService {
         return user;
     }
 
-    // Methods BookingService will call
-
     public Optional<User> findByStudentId(String id) {
         return repository.findById(id);
     }
@@ -34,7 +32,11 @@ public class UserService {
         return user.isPresent() && user.get().isActive();
     }
 
-    // Extras for the console menu
+    /** Required by UserLookup, which BookingService uses. */
+    @Override
+    public boolean isActiveUser(String studentId) {
+        return isActive(studentId);
+    }
 
     public List<User> getAllUsers() {
         return repository.findAll();
